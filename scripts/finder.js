@@ -1,32 +1,41 @@
 var finder = function(folder) {
-let thisFinder =
-`
-<div class="finder">
-  <div class="finder__top-bar">
-    <div class="finder__top-bar--controls">
-      <div class="finder__top-bar--control close"></div>
-      <div class="finder__top-bar--control minimize"></div>
-      <div class="finder__top-bar--control maximize"></div>
+  let thisFinder =
+  `
+  <div class="finder">
+    <div class="finder__top-bar">
+      <div class="finder__top-bar--controls">
+        <div class="finder__top-bar--control close"></div>
+        <div class="finder__top-bar--control minimize"></div>
+        <div class="finder__top-bar--control maximize"></div>
+      </div>
+      <div class="finder__top-bar--computer-name">
+        <img src="assets/folder.png">
+        sean_pierce/${folder}
+      </div>
     </div>
-    <div class="finder__top-bar--computer-name">
-      <img src="assets/folder.png">
-      sean_pierce/${folder}
+    <div class="finder__top-bar--main-content">
+      <div class="finder__top-bar--main-content--left-col">
+        <ul>
+          <li><strong>Desktop</strong></li>
+          ${ ITEMS.map(item => `<li class="${item.name === folder ? 'li-selected' : ''}">${item.name}</li>`).join('') }
+        </ul>
+      </div>
+      <div class="finder__top-bar--main-content--main-col">
+        <ul>
+          ${ ITEMS.map(item =>
+            `${ item.name === folder
+              ? `${item.content.files.map(file => `<li><img src="assets/text-icon.png">${file.name}</li>`)
+              .join('') }`
+              : '' }`).join('') }
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="finder__top-bar--main-content">
-    <div class="finder__top-bar--main-content--left-col"></div>
-    <div class="finder__top-bar--main-content--main-col">
-      <ul>
-        <li>item</li>
-        <li>item</li>
-        <li>item</li>
-      </ul>
-    </div>
-  </div>
-</div>
-`;
-return thisFinder;
+  `;
+  return thisFinder;
 }
+
+
 
 $(function() {
 
@@ -42,6 +51,9 @@ $(function() {
       let finderWindow = $(this).closest('.finder');
       finderWindow.remove();
     });
+
+    // append names of items to finder left col
+
 
   });
 
