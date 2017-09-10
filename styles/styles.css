@@ -38,7 +38,7 @@ body {
 .folder figcaption {
   display: inline-block;
   margin: auto;
-  margin-top: 0.8em;
+  margin-top: 0.5em;
   color: white;
   font-size: 0.8em;
   text-shadow: 0 2px 8px #333;
