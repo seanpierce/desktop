@@ -83,6 +83,13 @@
   position: absolute;
   top: 50px;
   left: 0;
+  font-size: 0.8em;
+}
+
+.finder__top-bar--main-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .finder__top-bar--main-content--left-col {
@@ -94,6 +101,22 @@
   background: #f1f3f6;
 }
 
+.finder__top-bar--main-content--left-col ul li {
+  padding: 0.25em 0 0.25em 1em;
+  color: #523f43;
+}
+
+.finder__top-bar--main-content--left-col ul li:first-child {
+  margin: 0.75em 0;
+  padding-left: 0.5em;
+  font-size: 0.8em;
+  color: #827578;
+}
+
+.finder__top-bar--main-content--left-col ul li.li-selected {
+  background: #cfd5e1;
+}
+
 .finder__top-bar--main-content--main-col {
   /* left col width 150px */
   /* total finder width = 600px */
@@ -103,4 +126,22 @@
   top: 1px;
   right: 0;
   border-left: solid 1px #9c9a9c;
+  color: #272727;
+}
+
+.finder__top-bar--main-content--main-col ul {
+  padding: 0 0.5em;
+  height: 100%;
+  display: inline-block;
+  border-right: solid 1px #e0e0e0;
+}
+
+.finder__top-bar--main-content--main-col ul li {
+  margin-bottom: 0.20em;
+}
+
+.finder__top-bar--main-content--main-col ul li img {
+  height: 1.15em;
+  margin-right: 0.25em;
+  vertical-align: top;
 }
