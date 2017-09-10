@@ -1,0 +1,106 @@
+/* --------------------------------- finder window styles */
+/* --------------------------------- finder window styles */
+/* --------------------------------- finder window styles */
+
+.finder {
+  position: absolute;
+  z-index: 1;
+  top: 250px;
+  left: 250px;
+  width: 600px;
+  height: 350px;
+  background: white;
+  border-radius: 8px;
+  border: solid 1pt #9c9a9c;
+  box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.2);
+  /* top bar fix wrapping out */
+  overflow: hidden;
+  padding: 0;
+}
+
+.finder__top-bar {
+  position: relative;
+  top: 0;
+  margin: auto;
+  height: 50px;
+  width: 100%;
+  background: #e1dfe1;
+  border-bottom: solid 1px #979697;
+}
+
+.finder__top-bar--controls {
+  z-index: 2;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.finder__top-bar--control {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.finder__top-bar--controls .close {
+  background-color: #ff4443;
+  border: solid 1px #f41213;
+}
+
+.finder__top-bar--controls .minimize {
+  background-color: #ffbe00;
+  border: solid 1px #e8ae40;
+}
+
+.finder__top-bar--controls .maximize {
+  background-color: #00da47;
+  border: solid 1px #46bf5a;
+}
+
+.finder__top-bar--computer-name {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 5px;
+  left: 0;
+  color: #3e3c54;
+  font-size: 0.8em;
+}
+
+.finder__top-bar--computer-name img {
+  height: 1em;
+  vertical-align: top;
+  margin-right: 0.15em;
+}
+
+.finder__top-bar--main-content {
+  height: 100%;\
+  /* top bar height = 50px */
+  /* total finder height = 350px */
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+.finder__top-bar--main-content--left-col {
+  height: 100%;
+  width: 150px;
+  position: absolute;
+  top: 1px;
+  left: 0;
+  background: #f1f3f6;
+}
+
+.finder__top-bar--main-content--main-col {
+  /* left col width 150px */
+  /* total finder width = 600px */
+  height: 100%;
+  width: 450px;
+  position: absolute;
+  top: 1px;
+  right: 0;
+  border-left: solid 1px #9c9a9c;
+}
