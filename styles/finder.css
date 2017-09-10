@@ -130,7 +130,7 @@
 }
 
 .finder__top-bar--main-content--main-col ul {
-  padding: 0 0.5em;
+  padding: 0 1em 0 0.5em;
   height: 100%;
   display: inline-block;
   border-right: solid 1px #e0e0e0;
