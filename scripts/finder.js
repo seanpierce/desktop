@@ -17,14 +17,19 @@ var finder = function(folder) {
       <div class="finder__top-bar--main-content--left-col">
         <ul>
           <li><strong>Desktop</strong></li>
-          ${ ITEMS.map(item => `<li class="${item.name === folder ? 'li-selected' : ''}">${item.name}</li>`).join('') }
+          ${ ITEMS.map(item => `<li class="${item.name === folder ? 'li-selected' : ''}"><img src="assets/directory-icon-gray.png">${item.name}</li>`).join('') }
         </ul>
       </div>
       <div class="finder__top-bar--main-content--main-col">
         <ul>
           ${ ITEMS.map(item =>
             `${ item.name === folder
-              ? `${item.content.files.map(file => `<li><img src="assets/text-icon.png">${file.name}</li>`)
+              ? `${item.content.directories.map(directory => `<li><img src="assets/directory-icon.png">${directory}</li>`)
+              .join('') }`
+              : '' }`).join('') }
+          ${ ITEMS.map(item =>
+            `${ item.name === folder
+              ? `${item.content.files.map(file => `<li><img src="assets/${file.type}-icon.png">${file.name}</li>`)
               .join('') }`
               : '' }`).join('') }
         </ul>
