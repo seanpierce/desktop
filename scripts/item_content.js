@@ -1,35 +1,55 @@
 const ITEMS = [
   {
     "name" : "press",
-    "content" : {
+    "content" :
+    {
       "files" : [
-        { "name" : "interview_with_zosia_wiatr.txt" },
-        { "name" : "joel_shanahan.txt" },
-        { "name" : "eric_evans.txt" }
+        {
+          "name" : "interview_with_zosia_wiatr.txt",
+          "type" : "text"
+        },
+        {
+          "name" : "joel_shanahan.txt",
+          "type" : "text"
+        },
+        {
+          "name" : "eric_evans.txt",
+          "type" : "text"
+        }
       ],
-      "directories" : []
+      "directories" : ["interviews", "write_ups"]
     }
   },
   {
     "name" : "images",
-    "content" : {
+    "content" :
+    {
       "files" : [
-        { "name" : "sean_at_dbfest.jpg" },
-        { "name" : "screenshot 09/15/1984.png" },
-        { "name" : "sean_and_lizi.jpg" },
-        { "name" : "39881rst2.jpg" }
+        {
+          "name" : "sean_at_dbfest.jpg",
+          "type" : "image"
+        },
+        {
+          "name" : "screenshot 09/15/1984.png",
+          "type" : "image"
+        },
+        {
+          "name" : "sean_and_lizi.jpg",
+          "type" : "image"
+        },
+        {
+          "name" : "39881rst2.jpg",
+          "type" : "image"
+        }
       ],
       "directories" : []
     }
   },
   {
     "name" : "projects",
-    "content" : {
-      "files" : [
-        { "name" : "spoiler room" },
-        { "name" : "introtorhythm.com" },
-        { "name" : "ASSS" }
-      ],
+    "content" :
+    {
+      "files" : [],
       "directories" : ["introtorhythm", "spoiler room"]
     }
   }
