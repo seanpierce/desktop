@@ -16,6 +16,7 @@
   /* top bar fix wrapping out */
   overflow: hidden;
   padding: 0;
+  cursor: default;
 }
 
 .finder__top-bar {
@@ -106,6 +107,12 @@
   color: #523f43;
 }
 
+.finder__top-bar--main-content--left-col ul li img {
+  height: 1.75em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
 .finder__top-bar--main-content--left-col ul li:first-child {
   margin: 0.75em 0;
   padding-left: 0.5em;
@@ -132,6 +139,7 @@
 .finder__top-bar--main-content--main-col ul {
   padding: 0 1em 0 0.5em;
   height: 100%;
+  min-width: 150px;
   display: inline-block;
   border-right: solid 1px #e0e0e0;
 }
