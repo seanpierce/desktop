@@ -55,6 +55,17 @@ var updateContent = function(currentContent, newFolder) {
         : '' }`).join('') }
     `
   );
+  resetHighlight();
+}
+
+var resetHighlight = function() {
+  // select toggle for sub-li
+  $('.finder__sub-item-li').click(function() {
+    // remove class fdeom all
+    $('.finder__sub-item-li').removeClass('finder__sub-item-li-selected');
+    // apply class to this
+    $(this).addClass('finder__sub-item-li-selected');
+  });
 }
 
 
@@ -98,13 +109,7 @@ $(function() {
       updateContent(currentContent, newFolder);
     });
 
-    // select toggle for sub-li
-    $('.finder__sub-item-li').click(function() {
-      // remove class fdeom all
-      $('.finder__sub-item-li').removeClass('finder__sub-item-li-selected');
-      // apply class to this
-      $(this).addClass('finder__sub-item-li-selected');
-    });
+    resetHighlight();
 
     // close this finder window
     $('.finder .finder__top-bar--controls .close').click(function() {

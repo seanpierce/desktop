@@ -95,10 +95,15 @@
   float: right;
   color: #767676;
   font-size: 0.75em;
+  vertical-align: bottom;
 }
 
 .finder__sub-item-li-selected {
   background-color: #015cdc;
+  color: white;
+}
+
+.finder__sub-item-li-selected span {
   color: white;
 }
 
