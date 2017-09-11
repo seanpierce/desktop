@@ -4,17 +4,10 @@ $(function() {
   $('.folder').draggable({
     // during drag
     drag: function() {
-      // set z-index greater than all others
-      $(this).css('z-index', 10);
       // remove selected status from all folders
       $('.folder').removeClass('selected');
       // add selected class
       $(this).addClass('selected');
-    },
-    // after stopping drag
-    stop: function() {
-      // reset it to default (1)
-      $(this).css('z-index', 1);
     }
   });
 

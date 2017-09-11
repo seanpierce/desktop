@@ -46,6 +46,10 @@ body {
   border-radius: 4px;
 }
 
+.selected {
+  z-index: 10;
+}
+
 /* styles for folder when clicked */
 .selected img {
   background-color: rgba(0, 0, 0, 0.2);

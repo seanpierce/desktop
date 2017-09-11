@@ -19,6 +19,10 @@
   cursor: default;
 }
 
+.finder-selected {
+  z-index: 10;
+}
+
 .finder__top-bar {
   position: relative;
   top: 0;

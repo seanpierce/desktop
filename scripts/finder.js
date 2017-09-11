@@ -1,7 +1,7 @@
 var finder = function(folder) {
   let thisFinder =
   `
-  <div class="finder">
+  <div class="finder finder-selected">
     <div class="finder__top-bar">
       <div class="finder__top-bar--controls">
         <div class="finder__top-bar--control close"></div>
@@ -49,7 +49,23 @@ $(function() {
     let folder = $(this).attr('data-folder');
     // display new finder and let it be draggable
     $('body').append(finder(folder));
-    $('.finder').draggable();
+    $('.finder').draggable({
+      // during drag
+      drag: function() {
+        // remove selected status from all others
+        $('.finder').removeClass('finder-selected');
+        // add finder-selected class
+        $(this).addClass('finder-selected');
+      }
+    });
+
+    // set finder as selected onclick
+    $('.finder').click(function() {
+      // remove selected status from all others
+      $('.finder').removeClass('finder-selected');
+      // add finder-selected class
+      $(this).addClass('finder-selected');
+    });
 
     // close this finder window
     $('.finder .finder__top-bar--controls .close').click(function() {
