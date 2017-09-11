@@ -1,27 +1,32 @@
 const ITEMS = [
   {
     "name" : "press",
+    "type" : "directory",
     "content" :
     {
+      "directories" : ["interviews", "write_ups"],
       "files" : [
         {
           "name" : "interview_with_zosia_wiatr.txt",
-          "type" : "text"
+          "type" : "text",
+          "path" : "assets/public/text/interview_with_zosia_wiatr.txt"
         },
         {
           "name" : "joel_shanahan.txt",
-          "type" : "text"
+          "type" : "text",
+          "path" : "assets/public/text/interview_with_zosia_wiatr.txt"
         },
         {
           "name" : "eric_evans.txt",
-          "type" : "text"
+          "type" : "text",
+          "path" : "assets/public/text/interview_with_zosia_wiatr.txt"
         }
-      ],
-      "directories" : ["interviews", "write_ups"]
+      ]
     }
   },
   {
     "name" : "images",
+    "type" : "directory",
     "content" :
     {
       "files" : [
@@ -47,10 +52,19 @@ const ITEMS = [
   },
   {
     "name" : "projects",
+    "type" : "directory",
     "content" :
     {
       "files" : [],
       "directories" : ["introtorhythm", "spoiler room"]
     }
+  },
+  {
+    "name" : "resources/info.txt",
+    "type" : "text",
+    "content" :
+      {
+        "text" : `cool!`
+      }
   }
 ];
