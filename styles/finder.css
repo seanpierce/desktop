@@ -41,8 +41,8 @@
 }
 
 .finder__top-bar--control {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   display: inline-block;
   margin-right: 4px;
@@ -89,6 +89,10 @@
   top: 50px;
   left: 0;
   font-size: 0.8em;
+}
+
+.finder__directory-triangle {
+  float: right;
 }
 
 .finder__top-bar--main-content ul {
