@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: 'Roboto', sans-serif;
 }
@@ -24,7 +28,7 @@ body {
 /* --------------------------------- folder styles */
 
 .folder {
-  width: 70px;
+  width: 65px;
   z-index: 1;
   text-align: center;
   margin-bottom: 1em;
@@ -36,6 +40,7 @@ body {
 }
 
 .folder figcaption {
+  width: 100%;
   display: inline-block;
   margin: auto;
   margin-top: 0.5em;
@@ -44,6 +49,7 @@ body {
   text-shadow: 0 2px 8px #333;
   padding: 4px;
   border-radius: 4px;
+  overflow-wrap: break-word;
 }
 
 .selected {
