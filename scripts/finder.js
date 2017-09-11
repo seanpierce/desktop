@@ -24,12 +24,12 @@ var finder = function(folder) {
         <ul class="finder__directory-content">
           ${ ITEMS.map(item =>
             `${ item.name === folder
-              ? `${item.content.directories.map(directory => `<li><img src="assets/directory-icon.png">${directory}<img src="assets/right-facing-triangle-icon.png" class="finder__directory-triangle"></li>`)
+              ? `${item.content.directories.map(directory => `<li class="finder__sub-item-li"><img src="assets/directory-icon.png">${directory}<span class="finder__directory-triangle">&#9654;</span></li>`)
               .join('') }`
               : '' }`).join('') }
           ${ ITEMS.map(item =>
             `${ item.name === folder
-              ? `${item.content.files.map(file => `<li><img src="assets/${file.type}-icon.png">${file.name}</li>`)
+              ? `${item.content.files.map(file => `<li class="finder__sub-item-li"><img src="assets/${file.type}-icon.png">${file.name}</li>`)
               .join('') }`
               : '' }`).join('') }
         </ul>
@@ -45,12 +45,12 @@ var updateContent = function(currentContent, newFolder) {
     `
     ${ ITEMS.map(item =>
       `${ item.name === newFolder
-        ? `${item.content.directories.map(directory => `<li><img src="assets/directory-icon.png">${directory}<img src="assets/right-facing-triangle-icon.png" class="finder__directory-triangle"></li>`)
+        ? `${item.content.directories.map(directory => `<li class="finder__sub-item-li"><img src="assets/directory-icon.png">${directory}<span class="finder__directory-triangle">&#9654;</span></li>`)
         .join('') }`
         : '' }`).join('') }
     ${ ITEMS.map(item =>
       `${ item.name === newFolder
-        ? `${item.content.files.map(file => `<li><img src="assets/${file.type}-icon.png">${file.name}</li>`)
+        ? `${item.content.files.map(file => `<li class="finder__sub-item-li"><img src="assets/${file.type}-icon.png">${file.name}</li>`)
         .join('') }`
         : '' }`).join('') }
     `
@@ -96,6 +96,14 @@ $(function() {
       let currentContent = (currentFinder.find('ul.finder__directory-content'));
       currentContent.empty();
       updateContent(currentContent, newFolder);
+    });
+
+    // select toggle for sub-li
+    $('.finder__sub-item-li').click(function() {
+      // remove class fdeom all
+      $('.finder__sub-item-li').removeClass('finder__sub-item-li-selected');
+      // apply class to this
+      $(this).addClass('finder__sub-item-li-selected');
     });
 
     // close this finder window
