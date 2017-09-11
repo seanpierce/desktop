@@ -29,25 +29,29 @@ const ITEMS = [
     "type" : "directory",
     "content" :
     {
+      "directories" : [],
       "files" : [
         {
           "name" : "sean_at_dbfest.jpg",
-          "type" : "image"
+          "type" : "image",
+          "path" : ""
         },
         {
           "name" : "screenshot 09/15/1984.png",
-          "type" : "image"
+          "type" : "image",
+          "path" : ""
         },
         {
           "name" : "sean_and_lizi.jpg",
-          "type" : "image"
+          "type" : "image",
+          "path" : ""
         },
         {
           "name" : "39881rst2.jpg",
-          "type" : "image"
+          "type" : "image",
+          "path" : ""
         }
-      ],
-      "directories" : []
+      ]
     }
   },
   {
@@ -55,16 +59,13 @@ const ITEMS = [
     "type" : "directory",
     "content" :
     {
-      "files" : [],
-      "directories" : ["introtorhythm", "spoiler room"]
+      "directories" : ["introtorhythm", "spoiler room"],
+      "files" : []
     }
   },
   {
     "name" : "resources/info.txt",
     "type" : "text",
-    "content" :
-      {
-        "text" : `cool!`
-      }
+    "path" : ""
   }
 ];
