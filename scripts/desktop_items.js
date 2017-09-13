@@ -1,8 +1,14 @@
 let desktop_item = function(item) {
+  let file_img;
+  if (item.type === 'image') {
+    file_img = `<img src="${item.path}" alt="${item.name}">`
+  } else {
+    file_img = `<img src="assets/folder-${item.type}.png" alt="">`
+  }
   let html =
   `
   <div class="desktop_item ${item.type}__true" data-folder="${item.name}">
-    <img src="assets/folder-${item.type}.png" alt="">
+    ${file_img}
     <figcaption>
       ${item.name}
     </figcaption>

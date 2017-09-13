@@ -1,4 +1,6 @@
-// item crud functionality here
+// ------------------------------------ item crud functionality here
+// ------------------------------------ item crud functionality here
+// ------------------------------------ item crud functionality here
 
 let create_new_item = function(name, type, content, directories, ref) {
   let newItem = ref.push();
@@ -11,16 +13,32 @@ let create_new_item = function(name, type, content, directories, ref) {
 }
 
 let list_all_items = function(parent, items) {
-  console.log(items);
   parent.empty();
-  parent.append(
-    `
-    <li>ok</li>
-    `
-  );
+  items.forEach(function(item) {
+    parent.append(
+      `
+      <li>${item.val().name}, ${item.val().type}, ${item.val().location}</li>
+      `
+    );
+  });
 }
 
-// Initialize Firebase
+let list_all_available_directories = function(parent, items) {
+  parent.empty();
+  items.forEach(function(item) {
+    if (item.val().type === 'directory') {
+      parent.append(
+        `
+        <option value="${item.val().name}">${item.val().name}</option>
+        `
+      );
+    }
+  });
+}
+
+// -------------------------------------- Initialize Firebase
+// -------------------------------------- Initialize Firebase
+// -------------------------------------- Initialize Firebase
 
 var config = {
   apiKey: "AIzaSyA1rZj4IMcLTlfAkpQq9dfoBVF5e8zYolM",
@@ -49,12 +67,15 @@ $(function() {
     $("#new-item").trigger("reset");
   });
 
-  // list all items to admin page
-  let list = $('#item-list');
+  // database query
   ref.on("value", function(snapshot) {
-      console.log(snapshot.val());
-      list_all_items(list, snapshot.val());
-    console.log();
+
+    // list all items to admin page
+    list_all_items($('#item-list'), snapshot);
+
+    // append directories to new-item form
+    list_all_available_directories($('#location-input'), snapshot);
+
   }, function (error) {
     console.log("Error: " + error.code);
   });

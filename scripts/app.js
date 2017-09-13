@@ -1,4 +1,7 @@
-// Initialize Firebase
+// --------------------------------------- Initialize Firebase
+// --------------------------------------- Initialize Firebase
+// --------------------------------------- Initialize Firebase
+
 var config = {
   apiKey: "AIzaSyA1rZj4IMcLTlfAkpQq9dfoBVF5e8zYolM",
   authDomain: "simulated-desktop.firebaseapp.com",
@@ -9,9 +12,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
+// database query
 let ref = firebase.database().ref("items/");
-
-// create_new_item("1", "2", "3", "4", ref);
 
 ref.on("value", function(snapshot) {
   snapshot.forEach(function(item) {

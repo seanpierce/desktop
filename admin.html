@@ -19,7 +19,12 @@
 
     <form id="new-item">
       <input type="text" id="name-input" placeholder="name">
-      <input type="text" id="type-input" placeholder="type">
+      <select id="type-input">
+        <option value="directory">Directory</option>
+        <option value="text">Text</option>
+        <option value="image">Image</option>
+      </select>
+      <select id="location-input"></select>
       <input type="text" id="content-input" placeholder="content">
       <input type="text" id="directories-input" placeholder="directories">
       <input type="submit"></input>

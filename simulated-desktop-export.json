@@ -3,6 +3,40 @@
     "ko9iyehOjusYhs8893h" : {
       "name" : "Press",
       "type" : "directory",
+      "location" : "desktop",
+      "path" : "",
+      "content" : {
+        "directories" : [
+          {
+            "name" : "interviews",
+            "type" : "directory",
+            "content" : []
+          },
+          {
+            "name" : "write_ups",
+            "type" : "directory",
+            "content" : []
+          }
+        ],
+        "files" : [
+          {
+            "name" : "joel_shanahan.txt",
+            "type" : "text",
+            "content" : ""
+          },
+          {
+            "name" : "interview_with_zosia_wiatr.txt",
+            "type" : "text",
+            "content" : ""
+          }
+        ]
+      }
+    },
+    "kjshiyehOjusYhsdsjfkhskjdfh" : {
+      "name" : "sean_db_fes.jpg",
+      "type" : "image",
+      "location" : "desktop",
+      "path" : "assets/items/images/sean_db_fest.jpg",
       "content" : {
         "directories" : [
           {
