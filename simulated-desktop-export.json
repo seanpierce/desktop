@@ -1,0 +1,34 @@
+{
+  "items" : {
+    "ko9iyehOjusYhs8893h" : {
+      "name" : "Press",
+      "type" : "directory",
+      "content" : {
+        "directories" : [
+          {
+            "name" : "interviews",
+            "type" : "directory",
+            "content" : []
+          },
+          {
+            "name" : "write_ups",
+            "type" : "directory",
+            "content" : []
+          }
+        ],
+        "files" : [
+          {
+            "name" : "joel_shanahan.txt",
+            "type" : "text",
+            "content" : ""
+          },
+          {
+            "name" : "interview_with_zosia_wiatr.txt",
+            "type" : "text",
+            "content" : ""
+          }
+        ]
+      }
+    }
+  }
+}

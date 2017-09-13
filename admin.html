@@ -3,21 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <title>Sean Pierce</title>
+    <title>Admin</title>
     <!-- imports -->
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/finder.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <script src="scripts/jquery.min.js"></script>
-    <script src="scripts/jquery-ui.min.js"></script>
-    <script src="scripts/jquery.ui.touch-punch.min.js"></script>
-    <script src="scripts/desktop_items.js"></script>
-    <script src="scripts/app.js"></script>
+    <script src="scripts/admin.js"></script>
   </head>
 
   <body>
 
-    <div id="background-div"></div>
+    <h3>Add an item</h3>
+
+    <form id="new-item">
+      <input type="text" id="name-input" placeholder="name">
+      <input type="text" id="type-input" placeholder="type">
+      <input type="text" id="content-input" placeholder="content">
+      <input type="text" id="directories-input" placeholder="directories">
+      <input type="submit"></input>
+    </form>
+
+    <h3>Edit an item</h3>
+    <ul id="item-list"></ul>
+
   </body>
 </html>
