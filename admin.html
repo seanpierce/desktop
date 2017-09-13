@@ -19,7 +19,7 @@
 
     <form id="new-item">
       <label for="name-input">Name</label>
-      <input type="text" id="name-input">
+      <input type="text" id="name-input" required>
       <label for="type-input">Type</label>
       <select id="type-input">
         <option value="directory">Directory</option>
@@ -30,11 +30,12 @@
       <select id="location-input"></select>
       <label for="contnet-input">Content (optional)</label>
       <textarea id="content-input"></textarea>
+      <br><br>
       <input type="submit"></input>
     </form>
     <hr>
     <h3>Edit an item</h3>
-    <ul id="item-list"></ul>
+    <table id="item-list"></table>
 
   </body>
 </html>

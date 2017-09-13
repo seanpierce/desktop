@@ -14,14 +14,23 @@ let create_new_item = function(name, type, location, content, ref) {
 
 let list_all_items = function(parent, items) {
   parent.empty();
+  parent.append(
+    `
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Location</th>
+    </tr>
+    `
+  );
   items.forEach(function(item) {
     parent.append(
       `
-      <table>
-        <span class="lighter">Name:</span> ${item.val().name}<br>
-        <span class="lighter">Type:</span> ${item.val().type}<br>
-        <span class="lighter">Location:</span> ${item.val().location}
-      </table>
+      <tr>
+        <td>${item.val().name}</td>
+        <td>${item.val().type}</td>
+        <td>${item.val().location}</td>
+      </tr>
       `
     );
   });
@@ -65,7 +74,7 @@ $(function() {
     let name = $('#name-input').val();
     let type = $('#type-input').val();
     let content = $('#content-input').val();
-    let directories = $('#directories-input').val();
+    let location = $('#location-input').val();
 
     create_new_item(name, type, location, content, ref);
 

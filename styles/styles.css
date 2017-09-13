@@ -118,8 +118,22 @@ select {
 #item-list li {
   padding: 5px;
 }
-#item-list li:nth-child(odd) {
+table {
+  border-collapse: collapse;
+  min-width: 400px;
+}
+table tr {
+  text-align: left;
+}
+table th, table td {
+  padding: 5px;
+}
+table tr:nth-child(odd) {
   background-color: #f7f7f7;
+}
+table tr:first-child {
+  background-color: #333;
+  color: white;
 }
 .lighter {
   color: #777;

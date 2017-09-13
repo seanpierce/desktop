@@ -1,4 +1,4 @@
-var finder = function(folder) {
+let finder = function(folder) {
   let thisFinder =
   `
   <div class="finder finder-selected">
@@ -76,7 +76,8 @@ var resetHighlight = function() {
 $(function() {
 
   // create new finder window
-  $('.folder').dblclick(function() {
+  $('.desktop_item').dblclick(function() {
+    alert();
     let folder = $(this).attr('data-folder');
     // display new finder and let it be draggable
     $('body').append(finder(folder));
