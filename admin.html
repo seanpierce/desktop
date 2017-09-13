@@ -18,18 +18,21 @@
     <h3>Add an item</h3>
 
     <form id="new-item">
-      <input type="text" id="name-input" placeholder="name">
+      <label for="name-input">Name</label>
+      <input type="text" id="name-input">
+      <label for="type-input">Type</label>
       <select id="type-input">
         <option value="directory">Directory</option>
         <option value="text">Text</option>
         <option value="image">Image</option>
       </select>
+      <label for="location-input">Location</label>
       <select id="location-input"></select>
-      <input type="text" id="content-input" placeholder="content">
-      <input type="text" id="directories-input" placeholder="directories">
+      <label for="contnet-input">Content (optional)</label>
+      <textarea id="content-input"></textarea>
       <input type="submit"></input>
     </form>
-
+    <hr>
     <h3>Edit an item</h3>
     <ul id="item-list"></ul>
 

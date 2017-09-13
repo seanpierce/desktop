@@ -4,7 +4,6 @@
       "name" : "Press",
       "type" : "directory",
       "location" : "desktop",
-      "path" : "",
       "content" : {
         "directories" : [
           {
@@ -33,10 +32,9 @@
       }
     },
     "kjshiyehOjusYhsdsjfkhskjdfh" : {
-      "name" : "sean_db_fes.jpg",
+      "name" : "sean_db_fest.jpg",
       "type" : "image",
       "location" : "desktop",
-      "path" : "assets/items/images/sean_db_fest.jpg",
       "content" : {
         "directories" : [
           {
@@ -50,18 +48,7 @@
             "content" : []
           }
         ],
-        "files" : [
-          {
-            "name" : "joel_shanahan.txt",
-            "type" : "text",
-            "content" : ""
-          },
-          {
-            "name" : "interview_with_zosia_wiatr.txt",
-            "type" : "text",
-            "content" : ""
-          }
-        ]
+        "files" : []
       }
     }
   }

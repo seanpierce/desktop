@@ -1,7 +1,7 @@
 let desktop_item = function(item) {
   let file_img;
   if (item.type === 'image') {
-    file_img = `<img src="${item.path}" alt="${item.name}">`
+    file_img = `<img src="assets/items/images/${item.name}" alt="${item.name}">`
   } else {
     file_img = `<img src="assets/folder-${item.type}.png" alt="">`
   }

@@ -2,13 +2,12 @@
 // ------------------------------------ item crud functionality here
 // ------------------------------------ item crud functionality here
 
-let create_new_item = function(name, type, content, directories, ref) {
+let create_new_item = function(name, type, content, ref) {
   let newItem = ref.push();
   newItem.set({
     name: name,
     type: type,
-    content: content,
-    directories: directories
+    content: content
   });
 }
 
@@ -25,6 +24,7 @@ let list_all_items = function(parent, items) {
 
 let list_all_available_directories = function(parent, items) {
   parent.empty();
+  parent.append(`<option value="desktop">Desktop</option>`);
   items.forEach(function(item) {
     if (item.val().type === 'directory') {
       parent.append(
@@ -62,7 +62,7 @@ $(function() {
     let content = $('#content-input').val();
     let directories = $('#directories-input').val();
 
-    create_new_item(name, type, content, directories, ref);
+    create_new_item(name, type, content, ref);
 
     $("#new-item").trigger("reset");
   });
