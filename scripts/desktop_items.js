@@ -2,7 +2,7 @@ let desktop_item = function(item) {
   // var declarations
   let file_img;
   let html;
-  
+
   // set icon image
   if (item.type === 'image') {
     file_img = `<img src="assets/items/images/${item.name}" alt="${item.name}">`
