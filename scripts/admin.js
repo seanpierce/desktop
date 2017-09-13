@@ -2,11 +2,12 @@
 // ------------------------------------ item crud functionality here
 // ------------------------------------ item crud functionality here
 
-let create_new_item = function(name, type, content, ref) {
+let create_new_item = function(name, type, location, content, ref) {
   let newItem = ref.push();
   newItem.set({
     name: name,
     type: type,
+    location: location,
     content: content
   });
 }
@@ -16,7 +17,11 @@ let list_all_items = function(parent, items) {
   items.forEach(function(item) {
     parent.append(
       `
-      <li>${item.val().name}, ${item.val().type}, ${item.val().location}</li>
+      <table>
+        <span class="lighter">Name:</span> ${item.val().name}<br>
+        <span class="lighter">Type:</span> ${item.val().type}<br>
+        <span class="lighter">Location:</span> ${item.val().location}
+      </table>
       `
     );
   });
@@ -62,7 +67,7 @@ $(function() {
     let content = $('#content-input').val();
     let directories = $('#directories-input').val();
 
-    create_new_item(name, type, content, ref);
+    create_new_item(name, type, location, content, ref);
 
     $("#new-item").trigger("reset");
   });

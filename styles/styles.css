@@ -121,3 +121,6 @@ select {
 #item-list li:nth-child(odd) {
   background-color: #f7f7f7;
 }
+.lighter {
+  color: #777;
+}

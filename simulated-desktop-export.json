@@ -1,55 +1,68 @@
 {
   "items" : {
-    "ko9iyehOjusYhs8893h" : {
-      "name" : "Press",
+    "-Ktx95PMYzYjfsO9hbB0" : {
+      "content" : "sdasdasd",
+      "name" : "sowmya's stuff",
       "type" : "directory",
-      "location" : "desktop",
-      "content" : {
-        "directories" : [
-          {
-            "name" : "interviews",
-            "type" : "directory",
-            "content" : []
-          },
-          {
-            "name" : "write_ups",
-            "type" : "directory",
-            "content" : []
-          }
-        ],
-        "files" : [
-          {
-            "name" : "joel_shanahan.txt",
-            "type" : "text",
-            "content" : ""
-          },
-          {
-            "name" : "interview_with_zosia_wiatr.txt",
-            "type" : "text",
-            "content" : ""
-          }
-        ]
-      }
+      "location" : "desktop"
+    },
+    "-KtxBKsRdg3-84-eupeK" : {
+      "content" : "",
+      "name" : "construction.jpg",
+      "type" : "image",
+      "location" : "desktop"
+    },
+    "-KtxDZyflxJ1kQyPACg5" : {
+      "content" : "this is my about section",
+      "name" : "about this page.txt",
+      "type" : "text",
+      "location" : "desktop"
     },
     "kjshiyehOjusYhsdsjfkhskjdfh" : {
-      "name" : "sean_db_fest.jpg",
-      "type" : "image",
-      "location" : "desktop",
       "content" : {
-        "directories" : [
-          {
-            "name" : "interviews",
-            "type" : "directory",
-            "content" : []
-          },
-          {
-            "name" : "write_ups",
-            "type" : "directory",
-            "content" : []
-          }
-        ],
-        "files" : []
-      }
+        "directories" : [ {
+          "name" : "interviews",
+          "type" : "directory"
+        }, {
+          "name" : "write_ups",
+          "type" : "directory"
+        } ],
+        "files" : [ {
+          "content" : "",
+          "name" : "joel_shanahan.txt",
+          "type" : "text"
+        }, {
+          "content" : "",
+          "name" : "interview_with_zosia_wiatr.txt",
+          "type" : "text"
+        } ]
+      },
+      "location" : "desktop",
+      "name" : "sean_db_fest.jpg",
+      "type" : "image"
+    },
+    "ko9iyehOjusYhs8893h" : {
+      "content" : {
+        "directories" : [ {
+          "name" : "interviews",
+          "type" : "directory"
+        }, {
+          "name" : "write_ups",
+          "type" : "directory"
+        } ],
+        "files" : [ {
+          "content" : "",
+          "name" : "joel_shanahan.txt",
+          "type" : "text"
+        }, {
+          "content" : "",
+          "name" : "interview_with_zosia_wiatr.txt",
+          "type" : "text"
+        } ]
+      },
+      "location" : "desktop",
+      "name" : "Press",
+      "type" : "directory"
     }
   }
 }
