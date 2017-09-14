@@ -17,6 +17,7 @@ let list_all_items = function(parent, items) {
   parent.append(
     `
     <tr>
+      <th>Actions</th>
       <th>Name</th>
       <th>Type</th>
       <th>Location</th>
@@ -27,6 +28,10 @@ let list_all_items = function(parent, items) {
     parent.append(
       `
       <tr>
+        <td>
+          <span data-key="${item.key}" class="delete_item" title="Delete Item">X</span>
+          <span data-key="${item.key}" class="edit_item" title="Edit Item">&#10000;</span>
+        </td>
         <td>${item.val().name}</td>
         <td>${item.val().type}</td>
         <td>${item.val().location}</td>
@@ -34,6 +39,10 @@ let list_all_items = function(parent, items) {
       `
     );
   });
+}
+
+let edit_form = function(item) {
+  console.log(item.name);
 }
 
 let list_all_available_directories = function(parent, items) {
@@ -48,6 +57,41 @@ let list_all_available_directories = function(parent, items) {
       );
     }
   });
+  // delete item
+  // can only be applied after items are printed
+  $('.delete_item').click(function() {
+    let key = $(this).attr('data-key');
+    if (confirm('Are you sure you want to delete this item?')) {
+      delete_item(ref, key);
+    }
+  });
+  // edit item
+  // can only be applied after items are printed
+  $('.edit_item').click(function() {
+    let key = $(this).attr('data-key');
+    let item = ref.child(key);
+    $('#edit_item_div').show();
+    // set values
+    let name = $('#edit-name-input');
+    let type = $('#edit-type-input');
+    let location = $('#edit-location-input');
+    let content = $('#edit-content-input');
+    name.val('ok');
+    type.val('text');
+    location.val('desktop');
+    content.val('wow, dang');
+
+    // edit submit function
+    $('#edit-item-form').submit(function(e) {
+      e.preventDefault();
+      edit_form(item);
+    });
+
+  });
+}
+
+let delete_item = function(ref, key) {
+  ref.child(key).remove();
 }
 
 // -------------------------------------- Initialize Firebase
@@ -89,9 +133,15 @@ $(function() {
 
     // append directories to new-item form
     list_all_available_directories($('#location-input'), snapshot);
+    list_all_available_directories($('#edit-location-input'), snapshot);
 
   }, function (error) {
     console.log("Error: " + error.code);
+  });
+
+  // cancel form show
+  $('.cancel').click(function() {
+    $('#edit_item_div').hide();
   });
 
 });

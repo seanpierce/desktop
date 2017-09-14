@@ -14,19 +14,3 @@ firebase.initializeApp(config);
 
 // database query
 let ref = firebase.database().ref("items/");
-
-ref.on("value", function(snapshot) {
-  snapshot.forEach(function(item) {
-    // print desktop items to page
-    $('body').append(desktop_item(item.val()));
-  });
-  // make desktop items functional
-  make_desktop_items_draggable();
-  // functionality for opening finders
-  directory_double_click_open_finder('directory__true');
-}, function (error) {
-  console.log("Error: " + error.code);
-});
-
-$(function() {
-});

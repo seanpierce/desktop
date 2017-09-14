@@ -77,7 +77,6 @@ $(function() {
 
   // create new finder window
   $('.desktop_item').dblclick(function() {
-    alert();
     let folder = $(this).attr('data-folder');
     // display new finder and let it be draggable
     $('body').append(finder(folder));
