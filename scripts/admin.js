@@ -30,7 +30,6 @@ let list_all_items = function(parent, items) {
       <tr>
         <td>
           <span data-key="${item.key}" class="delete_item" title="Delete Item">X</span>
-          <span data-key="${item.key}" class="edit_item" title="Edit Item">&#10000;</span>
         </td>
         <td>${item.val().name}</td>
         <td>${item.val().type}</td>
@@ -64,7 +63,7 @@ let list_all_available_directories = function(parent, items) {
   });
 }
 
-let functionality_for_editable_items = function(items) {
+let functionality_for_deletable_items = function(items) {
   // delete item
   // can only be applied after items are printed
   $('.delete_item').click(function() {
@@ -72,35 +71,6 @@ let functionality_for_editable_items = function(items) {
     if (confirm('Are you sure you want to delete this item?')) {
       delete_item(ref, key);
     }
-  });
-  // edit item
-  // can only be applied after items are printed
-  $('.edit_item').click(function() {
-    list_all_available_directories($('#edit-location-input'), items);
-    let key = $(this).attr('data-key');
-    let itemref = firebase.database().ref(`items/${key}`);
-    // new snapshot of single item
-    itemref.on("value", function(snapshot) {
-      item = snapshot.val();
-      // set values
-      let name = $('#edit-name-input'),
-          type = $('#edit-type-input'),
-          location = $('#edit-location-input'),
-          content = $('#edit-content-input');
-      name.val(item.name);
-      type.val(item.type);
-      location.val(item.location);
-      content.val(item.content);
-      // show edit div
-      $('#edit_item_div').show();
-      // edit submit function
-      $('#edit-item-form').submit(function(e) {
-        e.preventDefault();
-        edit_form(itemref, name.val(), type.val(), location.val(), content.val());
-        // reset form fields
-        name.val(''), type.val(''), location.val(''), content.val('');
-      });
-    });
   });
 }
 
@@ -147,7 +117,7 @@ $(function() {
 
     // append directories to new-item form
     list_all_available_directories($('#location-input'), snapshot);
-    functionality_for_editable_items(snapshot);
+    functionality_for_deletable_items(snapshot);
 
   }, function (error) {
     console.log("Error: " + error.code);

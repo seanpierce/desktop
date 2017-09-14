@@ -19,47 +19,13 @@
       "location" : "desktop"
     },
     "kjshiyehOjusYhsdsjfkhskjdfh" : {
-      "content" : {
-        "directories" : [ {
-          "name" : "interviews",
-          "type" : "directory"
-        }, {
-          "name" : "write_ups",
-          "type" : "directory"
-        } ],
-        "files" : [ {
-          "content" : "",
-          "name" : "joel_shanahan.txt",
-          "type" : "text"
-        }, {
-          "content" : "",
-          "name" : "interview_with_zosia_wiatr.txt",
-          "type" : "text"
-        } ]
-      },
+      "content" : "",
       "location" : "desktop",
       "name" : "sean_db_fest.jpg",
       "type" : "image"
     },
     "ko9iyehOjusYhs8893h" : {
-      "content" : {
-        "directories" : [ {
-          "name" : "interviews",
-          "type" : "directory"
-        }, {
-          "name" : "write_ups",
-          "type" : "directory"
-        } ],
-        "files" : [ {
-          "content" : "",
-          "name" : "joel_shanahan.txt",
-          "type" : "text"
-        }, {
-          "content" : "",
-          "name" : "interview_with_zosia_wiatr.txt",
-          "type" : "text"
-        } ]
-      },
+      "content" : "",
       "location" : "desktop",
       "name" : "Press",
       "type" : "directory"

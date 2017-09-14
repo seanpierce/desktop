@@ -10,6 +10,17 @@ body {
   padding: 2em;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+
 #background-div {
   width: 100%;
   height: 100%;
@@ -141,37 +152,4 @@ table tr:first-child {
 .delete_item {
   color: red;
   cursor: pointer;
-}
-.edit_item {
-  color: blue;
-  cursor: pointer;
-}
-#edit_item_div {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-#edit-item-form {
-  color: white;
-  width: 500px;
-  display: block;
-  margin: 200px auto;
-}
-#edit-item-form label {
-  color: white;
-}
-.cancel {
-  border: solid 1px #333;
-  border-radius: 0;
-  background: white;
-  padding: 0.5em;
-  font-size: 1em;
-  cursor: pointer;
-  display: inline;
-  color: black;
 }
