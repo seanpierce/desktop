@@ -41,8 +41,13 @@ let list_all_items = function(parent, items) {
   });
 }
 
-let edit_form = function(item) {
-  console.log(item.name);
+let edit_form = function(ref, new_name, new_type, new_location, new_content) {
+  ref.update({
+    name: new_name,
+    type: new_type,
+    location: new_location,
+    content: new_content,
+  });
 }
 
 let list_all_available_directories = function(parent, items) {
@@ -74,7 +79,6 @@ let functionality_for_editable_items = function(items) {
     list_all_available_directories($('#edit-location-input'), items);
     let key = $(this).attr('data-key');
     let itemref = firebase.database().ref(`items/${key}`);
-    let item;
     // new snapshot of single item
     itemref.on("value", function(snapshot) {
       item = snapshot.val();
@@ -86,13 +90,15 @@ let functionality_for_editable_items = function(items) {
       name.val(item.name);
       type.val(item.type);
       location.val(item.location);
-      content.val('item.contnet');
+      content.val(item.content);
       // show edit div
       $('#edit_item_div').show();
       // edit submit function
       $('#edit-item-form').submit(function(e) {
         e.preventDefault();
-        edit_form();
+        edit_form(itemref, name.val(), type.val(), location.val(), content.val());
+        // reset form fields
+        name.val(''), type.val(''), location.val(''), content.val('');
       });
     });
   });
