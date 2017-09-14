@@ -5,19 +5,44 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <title>Sean Pierce</title>
     <!-- imports -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/finder.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="styles/terminal.css">
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <script src="scripts/jquery/jquery.min.js"></script>
     <script src="scripts/jquery/jquery-ui.min.js"></script>
     <script src="scripts/jquery/jquery.ui.touch-punch.min.js"></script>
     <script src="scripts/desktop_items.js"></script>
     <script src="scripts/finder.js"></script>
+    <script src="scripts/terminal.js"></script>
     <script src="scripts/app.js"></script>
   </head>
 
   <body>
     <div id="background-div"></div>
+
+    <div class="terminal">
+      <div class="terminal__topbar">
+        <span>guest@sean_pierce.machine</span>
+      </div>
+      <div class="terminal__content">
+        <form class="terminal-form-user">
+          <span class="terminal__message">Please enter your username</span>
+          <span class="arrow">➜</span> <input type="text" class="username-input" name="username" maxlength="25" autofocus autocomplete="off"></input>
+        </form>
+        <form class="terminal-form-pass">
+          <span class="terminal__message">Please enter your password</span>
+          <span class="arrow">➜</span> <input type="password" class="password-input" name="username" maxlength="25"></input>
+        </form>
+        <div class="success-message-div">
+          <span class="arrow">➜</span> <span class="success-message"></span>
+        </div>
+        <div class="failure-message-div">
+          <span class="arrow">➜</span> User credentials invalid. Please <a href="#" id="tryagain">try again</a>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>

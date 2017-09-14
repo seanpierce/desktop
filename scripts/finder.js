@@ -32,7 +32,7 @@ let finder = function(clicked_folder) {
   return thisFinder;
 }
 
-let directory_double_click_open_finder = function(input) {
+let directory_double_click_open_finder = function(input, snapshot) {
   $(`.${input}`).dblclick(function() {
     let clicked_folder = $(this).attr('data-folder');
     // open new finder window on page

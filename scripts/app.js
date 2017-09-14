@@ -20,15 +20,14 @@ ref.on("value", function(snapshot) {
   snapshot.forEach(function(item) {
     // erase all prev items
     // print desktop items to page
-    $('body').append(desktop_item(item.val()));
+    $('body').append(desktop_item(item));
   });
   // make desktop items functional
   make_desktop_items_draggable();
   // functionality for opening finders
-  directory_double_click_open_finder('directory__true');
+  directory_double_click_open_finder('directory__true', snapshot);
+  // temporarily place code here to make terminal draggable
+  $('.terminal').draggable();
 }, function (error) {
   console.log("Error: " + error.code);
-});
-
-$(function() {
 });

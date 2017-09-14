@@ -40,15 +40,6 @@ let list_all_items = function(parent, items) {
   });
 }
 
-let edit_form = function(ref, new_name, new_type, new_location, new_content) {
-  ref.update({
-    name: new_name,
-    type: new_type,
-    location: new_location,
-    content: new_content,
-  });
-}
-
 let list_all_available_directories = function(parent, items) {
   parent.empty();
   parent.append(`<option value="desktop">Desktop</option>`);
@@ -78,24 +69,11 @@ let delete_item = function(ref, key) {
   ref.child(key).remove();
 }
 
-// -------------------------------------- Initialize Firebase
-// -------------------------------------- Initialize Firebase
-// -------------------------------------- Initialize Firebase
-
-var config = {
-  apiKey: "AIzaSyA1rZj4IMcLTlfAkpQq9dfoBVF5e8zYolM",
-  authDomain: "simulated-desktop.firebaseapp.com",
-  databaseURL: "https://simulated-desktop.firebaseio.com",
-  projectId: "simulated-desktop",
-  storageBucket: "simulated-desktop.appspot.com",
-  messagingSenderId: "643543693366"
-};
-firebase.initializeApp(config);
-
-let ref = firebase.database().ref("items/");
+// --------------------------- document ready
+// --------------------------- document ready
+// --------------------------- document ready
 
 $(function() {
-
   // add new item
   $('#new-item').submit(function(e) {
     e.preventDefault();
@@ -108,24 +86,14 @@ $(function() {
 
     $("#new-item").trigger("reset");
   });
-
   // database query
   ref.on("value", function(snapshot) {
-
     // list all items to admin page
     list_all_items($('#item-list'), snapshot);
-
     // append directories to new-item form
     list_all_available_directories($('#location-input'), snapshot);
     functionality_for_deletable_items(snapshot);
-
   }, function (error) {
     console.log("Error: " + error.code);
   });
-
-  // cancel form show
-  $('.cancel').click(function() {
-    $('#edit_item_div').hide();
-  });
-
 });

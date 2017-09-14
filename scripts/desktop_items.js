@@ -1,23 +1,25 @@
 let desktop_item = function(item) {
+  let key = item.key;
+  let this_item = item.val();
   // var declarations
   let file_img;
   let html;
 
   // set icon image
-  if (item.type === 'image') {
-    file_img = `<img src="assets/items/images/${item.name}" alt="${item.name}">`
+  if (this_item.type === 'image') {
+    file_img = `<img src="assets/items/images/${this_item.name}" alt="${this_item.name}">`
   } else {
-    file_img = `<img src="assets/folder-${item.type}.png" alt="">`
+    file_img = `<img src="assets/folder-${this_item.type}.png" alt="">`
   }
 
   // only place item on desktop if it's location is desktop
-  if (item.location === 'desktop') {
+  if (this_item.location === 'desktop') {
     html =
     `
-    <div class="desktop_item ${item.type}__true" data-folder="${item.name}">
+    <div class="desktop_item ${this_item.type}__true" data-folder="${this_item.name}" data-key="${key}">
       ${file_img}
       <figcaption>
-        ${item.name}
+        ${this_item.name}
       </figcaption>
     </div>
     `
