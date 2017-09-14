@@ -57,6 +57,9 @@ let list_all_available_directories = function(parent, items) {
       );
     }
   });
+}
+
+let functionality_for_editable_items = function(items) {
   // delete item
   // can only be applied after items are printed
   $('.delete_item').click(function() {
@@ -68,25 +71,30 @@ let list_all_available_directories = function(parent, items) {
   // edit item
   // can only be applied after items are printed
   $('.edit_item').click(function() {
+    list_all_available_directories($('#edit-location-input'), items);
     let key = $(this).attr('data-key');
-    let item = ref.child(key);
-    $('#edit_item_div').show();
-    // set values
-    let name = $('#edit-name-input');
-    let type = $('#edit-type-input');
-    let location = $('#edit-location-input');
-    let content = $('#edit-content-input');
-    name.val('ok');
-    type.val('text');
-    location.val('desktop');
-    content.val('wow, dang');
-
-    // edit submit function
-    $('#edit-item-form').submit(function(e) {
-      e.preventDefault();
-      edit_form(item);
+    let itemref = firebase.database().ref(`items/${key}`);
+    let item;
+    // new snapshot of single item
+    itemref.on("value", function(snapshot) {
+      item = snapshot.val();
+      // set values
+      let name = $('#edit-name-input'),
+          type = $('#edit-type-input'),
+          location = $('#edit-location-input'),
+          content = $('#edit-content-input');
+      name.val(item.name);
+      type.val(item.type);
+      location.val(item.location);
+      content.val('item.contnet');
+      // show edit div
+      $('#edit_item_div').show();
+      // edit submit function
+      $('#edit-item-form').submit(function(e) {
+        e.preventDefault();
+        edit_form();
+      });
     });
-
   });
 }
 
@@ -133,7 +141,7 @@ $(function() {
 
     // append directories to new-item form
     list_all_available_directories($('#location-input'), snapshot);
-    list_all_available_directories($('#edit-location-input'), snapshot);
+    functionality_for_editable_items(snapshot);
 
   }, function (error) {
     console.log("Error: " + error.code);

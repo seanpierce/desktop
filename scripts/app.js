@@ -16,7 +16,9 @@ firebase.initializeApp(config);
 let ref = firebase.database().ref("items/");
 
 ref.on("value", function(snapshot) {
+  $('.desktop_item').remove();
   snapshot.forEach(function(item) {
+    // erase all prev items
     // print desktop items to page
     $('body').append(desktop_item(item.val()));
   });
