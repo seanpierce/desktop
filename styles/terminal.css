@@ -36,6 +36,9 @@
 .teal {
   color: #00bfcb;
 }
+.red {
+  color: #d51400;
+}
 input.username-input,
 input.password-input {
   font-family: monospace;
