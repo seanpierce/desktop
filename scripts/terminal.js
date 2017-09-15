@@ -7,8 +7,8 @@ $(function() {
       $('.success-message').html(
         `
         Welcome ${firebaseUser.email}<br>
-        <a href="admin.html">click here</a> to access the admin portal</br>
-        <a href="#" class="logout">click here</a> to log out
+        <a href="admin.html"><span class="teal">click here</span></a> to access the admin portal</br>
+        <a href="#" class="logout"><span class="teal">click here</span></a> to log out
         `
       );
       $('.logout').click(function() {

@@ -14,3 +14,10 @@ firebase.initializeApp(config);
 
 // database query
 let ref = firebase.database().ref("items/");
+
+//Handle Account Status
+firebase.auth().onAuthStateChanged(user => {
+  if(!user) {
+    window.location = 'index.html'; //If User is not logged in, redirect to login page
+  }
+});
