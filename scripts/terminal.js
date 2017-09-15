@@ -44,6 +44,10 @@ $(function() {
         promise.catch(function(e) {
           console.log(e.message);
           $('.failure-message-div').show();
+          $('#tryagain').click(function() {
+            $('.failure-message-div').hide();
+            $('.terminal-form-user').show();
+          });
         });
       });
     }
