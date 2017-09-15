@@ -24,22 +24,27 @@
 
     <div class="terminal">
       <div class="terminal__topbar">
+        <div class="finder__top-bar--controls terminal__styles">
+          <div class="finder__top-bar--control close"></div>
+          <div class="finder__top-bar--control minimize"></div>
+          <div class="finder__top-bar--control maximize"></div>
+        </div>
         <span>guest@sean_pierce.machine</span>
       </div>
       <div class="terminal__content">
         <form class="terminal-form-user">
           <span class="terminal__message">Please enter your username</span>
-          <span class="arrow">➜</span> <input type="text" class="username-input" name="username" maxlength="25" autofocus autocomplete="off"></input>
+          <span class="green">➜</span> <span class="teal">~</span> <input type="text" class="username-input" name="username" maxlength="25" autofocus autocomplete="off"></input>
         </form>
         <form class="terminal-form-pass">
           <span class="terminal__message">Please enter your password</span>
-          <span class="arrow">➜</span> <input type="password" class="password-input" name="username" maxlength="25"></input>
+          <span class="green">➜</span> <span class="teal">~</span> <input type="password" class="password-input" name="username" maxlength="25"></input>
         </form>
         <div class="success-message-div">
-          <span class="arrow">➜</span> <span class="success-message"></span>
+          <span class="green">➜</span> <span class="teal">~</span> <span class="success-message"></span>
         </div>
         <div class="failure-message-div">
-          <span class="arrow">➜</span> User credentials invalid. Please <a href="#" id="tryagain">try again</a>
+          <span class="green">➜</span> <span class="teal">~</span> User credentials invalid. Please <a href="#" id="tryagain">try again</a>
         </div>
       </div>
     </div>
